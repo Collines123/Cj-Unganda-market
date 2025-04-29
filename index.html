@@ -1,47 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-UG" dir="ltr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Uganda Marketplace</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uganda's premier online marketplace for local products and agricultural goods">
+    <meta name="author" content="UG Marketplace">
+    <meta property="og:title" content="UG Marketplace | Buy & Sell Local Products">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marketplace.ug">
+    <title>UG Marketplace | Buy & Sell Local Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-    <header>
-        <div class="container nav">
-            <h1>UG Marketplace</h1>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Sellers</a>
-                <a href="#">About</a>
-            </nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    
+    <header role="banner">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <a href="/" aria-label="UG Marketplace Home">
+                        <img src="logo.svg" alt="UG Marketplace Logo" width="200" height="40">
+                    </a>
+                </h1>
+                
+                <nav class="primary-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="/" class="nav-link current">Home</a></li>
+                        <li><a href="/products" class="nav-link">Products</a></li>
+                        <li><a href="/sellers" class="nav-link">Sellers</a></li>
+                        <li><a href="/about" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <h2 class="section-title">Featured Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200" alt="Product Image">
-                <h3>Fresh Beans</h3>
-                <p>UGX 8,000</p>
-                <button>Buy Now</button>
+    <main id="main-content" role="main">
+        <section class="featured-products" aria-labelledby="featured-products-heading">
+            <div class="container">
+                <h2 id="featured-products-heading" class="section-title">Featured Local Products</h2>
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                        <div class="product-image">
+                            <img src="images/beans.jpg" alt="Fresh organic beans from Western Uganda" 
+                                 width="400" height="300" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title" itemprop="name">Fresh Beans</h3>
+                            <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="UGX">
+                                <span class="price" itemprop="price">8,000</span> UGX
+                            </div>
+                            <button class="cta-button" aria-label="Buy Fresh Beans">
+                                Buy Now
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 2 -->
+                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                        <div class="product-image">
+                            <img src="images/honey.jpg" alt="Pure natural honey from Luwero" 
+                                 width="400" height="300" loading="lazy" itemprop="image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title" itemprop="name">Local Honey</h3>
+                            <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="UGX">
+                                <span class="price" itemprop="price">15,000</span> UGX
+                            </div>
+                            <button class="cta-button" aria-label="Buy Local Honey">
+                                Buy Now
+                            </button>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200" alt="Product Image">
-                <h3>Local Honey</h3>
-                <p>UGX 15,000</p>
-                <button>Buy Now</button>
-            </div>
-            <!-- Add more products as needed -->
-        </div>
+        </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
-            <p>&copy; 2025 UG Marketplace. All rights reserved.</p>
+            <div class="footer-content">
+                <p class="copyright">&copy; <span id="current-year"></span> UG Marketplace. All rights reserved.</p>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul class="footer-links">
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Current year for copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
