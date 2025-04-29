@@ -1,105 +1,191 @@
 <!DOCTYPE html>
-<html lang="en-UG" dir="ltr">
+<html lang="en-UG">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Uganda's premier online marketplace for local products and agricultural goods">
-    <meta name="author" content="UG Marketplace">
-    <meta property="og:title" content="UG Marketplace | Buy & Sell Local Products">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marketplace.ug">
-    <title>UG Marketplace | Buy & Sell Local Products</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>UG MarketHub | Local Goods Marketplace</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+        }
+
+        /* Header */
+        .market-header {
+            padding: 1rem 5%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-sections {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-sections a {
+            color: #2c5f2d;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        /* Main Content */
+        .market-hero {
+            padding: 6rem 5% 3rem;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                        url('market-bg.jpg');
+            background-size: cover;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #2c5f2d;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .search-bar {
+            width: min(90%, 600px);
+            padding: 1rem;
+            margin: 1.5rem auto;
+            border: 2px solid #2c5f2d;
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 5%;
+        }
+
+        .category-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .market-footer {
+            background: #2c5f2d;
+            color: #fff;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .market-header {
+                position: relative;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-sections {
+                justify-content: center;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-bar {
+                font-size: 0.9rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    
-    <header role="banner">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="logo">
-                    <a href="/" aria-label="UG Marketplace Home">
-                        <img src="logo.svg" alt="UG Marketplace Logo" width="200" height="40">
-                    </a>
-                </h1>
-                
-                <nav class="primary-nav" aria-label="Main navigation">
-                    <ul class="nav-list">
-                        <li><a href="/" class="nav-link current">Home</a></li>
-                        <li><a href="/products" class="nav-link">Products</a></li>
-                        <li><a href="/sellers" class="nav-link">Sellers</a></li>
-                        <li><a href="/about" class="nav-link">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <header class="market-header">
+        <h1>UG MarketHub</h1>
+        <nav class="nav-sections">
+            <a href="#farm">Farm Goods</a>
+            <a href="#artisans">Artisans</a>
+            <a href="#producers">Producers</a>
+            <a href="#about">About</a>
+        </nav>
     </header>
 
-    <main id="main-content" role="main">
-        <section class="featured-products" aria-labelledby="featured-products-heading">
-            <div class="container">
-                <h2 id="featured-products-heading" class="section-title">Featured Local Products</h2>
-                <div class="product-grid">
-                    <!-- Product Card 1 -->
-                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                        <div class="product-image">
-                            <img src="images/beans.jpg" alt="Fresh organic beans from Western Uganda" 
-                                 width="400" height="300" loading="lazy" itemprop="image">
-                        </div>
-                        <div class="product-details">
-                            <h3 class="product-title" itemprop="name">Fresh Beans</h3>
-                            <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="UGX">
-                                <span class="price" itemprop="price">8,000</span> UGX
-                            </div>
-                            <button class="cta-button" aria-label="Buy Fresh Beans">
-                                Buy Now
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- Product Card 2 -->
-                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                        <div class="product-image">
-                            <img src="images/honey.jpg" alt="Pure natural honey from Luwero" 
-                                 width="400" height="300" loading="lazy" itemprop="image">
-                        </div>
-                        <div class="product-details">
-                            <h3 class="product-title" itemprop="name">Local Honey</h3>
-                            <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="UGX">
-                                <span class="price" itemprop="price">15,000</span> UGX
-                            </div>
-                            <button class="cta-button" aria-label="Buy Local Honey">
-                                Buy Now
-                            </button>
-                        </div>
-                    </article>
-                </div>
+    <main>
+        <section class="market-hero">
+            <h2 class="hero-title">Uganda's Digital Marketplace</h2>
+            <input type="search" 
+                   class="search-bar" 
+                   placeholder="Search for fresh produce, crafts, or sellers...">
+            <div class="category-grid">
+                <article class="category-card">
+                    <h3>Fresh Crops</h3>
+                    <p>Direct from local farms</p>
+                </article>
+                <article class="category-card">
+                    <h3>Handicrafts</h3>
+                    <p>Traditional handmade items</p>
+                </article>
+                <article class="category-card">
+                    <h3>Processed Goods</h3>
+                    <p>Honey, oils & preserves</p>
+                </article>
             </div>
         </section>
     </main>
 
-    <footer role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <p class="copyright">&copy; <span id="current-year"></span> UG Marketplace. All rights reserved.</p>
-                <nav class="footer-nav" aria-label="Footer navigation">
-                    <ul class="footer-links">
-                        <li><a href="/terms">Terms of Service</a></li>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <footer class="market-footer">
+        <div class="footer-content">
+            <p>Connecting Uganda's producers to the world</p>
+            <nav class="footer-links">
+                <a href="/about">About Us</a>
+                <a href="/sell">Become Seller</a>
+                <a href="/contact">Contact</a>
+            </nav>
+            <p>&copy; 2024 UG MarketHub. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Current year for copyright
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
