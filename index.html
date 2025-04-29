@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Uganda Marketplace</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
-        <h1>Welcome to the Uganda Local Marketplace</h1>
+        <div class="container nav">
+            <h1>UG Marketplace</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Sellers</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
     </header>
-    <section>
-        <h2>Browse Products</h2>
-        <p>Browse a wide range of local products from the heart of Uganda!</p>
-        <div class="product-list">
-            <!-- Example products -->
-            <div class="product">
-                <img src="product-image.jpg" alt="Product">
-                <h3>Product Name</h3>
-                <p>Price: UGX 10,000</p>
+
+    <main class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product Image">
+                <h3>Fresh Beans</h3>
+                <p>UGX 8,000</p>
                 <button>Buy Now</button>
             </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product Image">
+                <h3>Local Honey</h3>
+                <p>UGX 15,000</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Add more products as needed -->
         </div>
-    </section>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Uganda Marketplace</p>
+        <div class="container">
+            <p>&copy; 2025 UG Marketplace. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
